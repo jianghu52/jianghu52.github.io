@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-02-28T12:59:50.000Z</updated>
+  <updated>2017-07-29T14:02:20.556Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>胡汉三回来了</title>
+    <link href="http://yoursite.com/2017/07/29/%E8%83%A1%E6%B1%89%E4%B8%89%E5%9B%9E%E6%9D%A5%E4%BA%86/"/>
+    <id>http://yoursite.com/2017/07/29/胡汉三回来了/</id>
+    <published>2017-07-29T13:53:18.000Z</published>
+    <updated>2017-07-29T14:02:20.556Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="胡汉三回来了。"><a href="#胡汉三回来了。" class="headerlink" title="胡汉三回来了。"></a>胡汉三回来了。</h1><p> 胡汉三回来了。因为他新买了一台电脑，旧电脑莫名的起不来了。结果很多东西需要一点点的整，好不容易才轮到了博客。<br> 从这个角度来说，貌似博客真的不是什么重要的事情。</p>
+<p>但是换个角度来说，对于一个连朋友圈都很少打开的人来说，能在换了电脑半个月之后就来整博客，也算是一种重视吧。毕竟像什么<br>虚拟机配置啥的，到现在才进行了一般，数据库也才导入了一小部分。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;胡汉三回来了。&quot;&gt;&lt;a href=&quot;#胡汉三回来了。&quot; class=&quot;headerlink&quot; title=&quot;胡汉三回来了。&quot;&gt;&lt;/a&gt;胡汉三回来了。&lt;/h1&gt;&lt;p&gt; 胡汉三回来了。因为他新买了一台电脑，旧电脑莫名的起不来了。结果很多东西需要一点点的整，好不容易才轮
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
