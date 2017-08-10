@@ -37,7 +37,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -64,6 +64,49 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-java版本的一个坑" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/10/java版本的一个坑/" class="article-date">
+  <time datetime="2017-08-10T12:41:07.000Z" itemprop="datePublished">2017-08-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/10/java版本的一个坑/">java版本的一个坑</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <h1 id="记录一个java版本的坑"><a href="#记录一个java版本的坑" class="headerlink" title="记录一个java版本的坑"></a>记录一个java版本的坑</h1><p>我一直以为java8小版本号之间是没有什么差异的，结果今天踩了一个巨大的坑才发现不是。<br>这次的任务比较奇葩，java不能调试，只有实际的运行环境的文件。我们要改的文件最后会打成一个jar包，以jar包的形式被实际环境调用。所以我们只能是通过输出log的方式来实际查看代码运行效果。</p>
+<p>在测试环节，我本地的java版本是[1.8.0-14].我修改完代码之后，连整个工程都上传了一次。测试机装的java版本是1.8.0_10。在这个时候测试机跑代码没有问题。但是当我再次上传代码，测试机用eclipse通过svn同步之后，代码是有的，但是打包的时候，就是看不到新的代码。当时幸好改动的地方不多，一点点的排查，最后查到class文件发现了不同。</p>
+<p>具体的原因未知，当时为了快点测试，直接就把测试机的java版本直接升到了小版本的14.之后编译一切正常。到现在也不知道为什么会这样，实际看了下源代码，调用的方法属于不建议用的方法，不知道是否跟这个有关，等后期有时间再装一个jdk。看能不能重现这个问题。今天先记录下来，如果下次再遇到这种本机好用，测试机原来好用，新编译文件怎么都不好用的时候，就要考虑下jdk小版本不同的可能性了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/08/10/java版本的一个坑/" data-id="cj66gfu2n00000oqr08smwana" class="article-share-link">Delen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
   
     <article id="post-同步hexo遇到的坑" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -150,7 +193,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/31/同步hexo遇到的坑/" data-id="cj5s9cyee00011cqrkuzzk6xo" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2017/07/31/同步hexo遇到的坑/" data-id="cj66gfu4e00080oqrx7alowcx" class="article-share-link">Delen</a>
       
       
       
@@ -192,7 +235,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/29/胡汉三回来了/" data-id="cj5s9cyen00041cqr9kh8fdm2" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2017/07/29/胡汉三回来了/" data-id="cj66gfu3i00060oqr4bbc1ptk" class="article-share-link">Delen</a>
       
       
       
@@ -241,7 +284,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/29/hello-world/" data-id="cj5s9cyel00031cqrfmh998wl" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2017/07/29/hello-world/" data-id="cj66gfu3100010oqrdzcfamim" class="article-share-link">Delen</a>
       
       
       
@@ -323,7 +366,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/15/vs-code-好用插件/" data-id="cj5s9cyej00021cqrce5xr5as" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2017/03/15/vs-code-好用插件/" data-id="cj66gfu3500020oqr7ryoznl6" class="article-share-link">Delen</a>
       
       
       
@@ -376,7 +419,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/12/xampp版本问题/" data-id="cj5s9cyes00051cqrqbztu316" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2017/03/12/xampp版本问题/" data-id="cj66gfu3800030oqriprebdh3" class="article-share-link">Delen</a>
       
       
       
@@ -424,7 +467,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/05/华为之狼性-从清理40-研发人员说起/" data-id="cj5s9cye700001cqrul4louht" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2017/03/05/华为之狼性-从清理40-研发人员说起/" data-id="cj66gfu3a00040oqrdt74h52q" class="article-share-link">Delen</a>
       
       
       
@@ -472,7 +515,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title tagcloud">标签云</h3>
+    <h3 class="widget-title tagcloud">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/技术/" style="font-size: 10px;">技术</a>
     </div>
@@ -481,9 +524,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title recent-posts">最新文章</h3>
+    <h3 class="widget-title recent-posts">Recente berichten</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/08/10/java版本的一个坑/">java版本的一个坑</a>
+          </li>
         
           <li>
             <a href="/2017/07/31/同步hexo遇到的坑/">同步hexo遇到的坑</a>
@@ -501,10 +548,6 @@
             <a href="/2017/03/15/vs-code-好用插件/">vs code 好用插件</a>
           </li>
         
-          <li>
-            <a href="/2017/03/12/xampp版本问题/">xampp版本问题</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -513,7 +556,7 @@
     
 
    <div class="widget-wrap">
-    <h3 class="widget-title lastest-comments">最新评论</h3>
+    <h3 class="widget-title lastest-comments">Latest Comments</h3>
     <div class="widget">
         <span>此widget基于多说，如需使用，请启用 duoshuo_shortname 属性</span>
     </div>
@@ -524,7 +567,7 @@
     
 
    <div class="widget-wrap">
-    <h3 class="widget-title hot-comment-posts">热评文章</h3>
+    <h3 class="widget-title hot-comment-posts">Hot Posts</h3>
     <div class="widget">
         <span>此widget基于多说，如需使用，请启用 duoshuo_shortname 属性</span>
     </div>
@@ -533,9 +576,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title archive">归档</h3>
+    <h3 class="widget-title archive">Archieven</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -549,10 +592,10 @@
   <div class="outer">
     <div id="footer-left">
       &copy; 2014 - 2017 John Doe&nbsp;|&nbsp;
-      主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
+      Theme by <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
     </div>
      <div id="footer-right">
-      联系方式&nbsp;|&nbsp;youemail@outlook.com
+      Contact&nbsp;|&nbsp;youemail@outlook.com
     </div>
   </div>
 </footer>

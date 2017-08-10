@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-31T14:36:33.126Z</updated>
+  <updated>2017-08-10T13:03:21.529Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>java版本的一个坑</title>
+    <link href="http://yoursite.com/2017/08/10/java%E7%89%88%E6%9C%AC%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/"/>
+    <id>http://yoursite.com/2017/08/10/java版本的一个坑/</id>
+    <published>2017-08-10T12:41:07.000Z</published>
+    <updated>2017-08-10T13:03:21.529Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="记录一个java版本的坑"><a href="#记录一个java版本的坑" class="headerlink" title="记录一个java版本的坑"></a>记录一个java版本的坑</h1><p>我一直以为java8小版本号之间是没有什么差异的，结果今天踩了一个巨大的坑才发现不是。<br>这次的任务比较奇葩，java不能调试，只有实际的运行环境的文件。我们要改的文件最后会打成一个jar包，以jar包的形式被实际环境调用。所以我们只能是通过输出log的方式来实际查看代码运行效果。</p>
+<p>在测试环节，我本地的java版本是[1.8.0-14].我修改完代码之后，连整个工程都上传了一次。测试机装的java版本是1.8.0_10。在这个时候测试机跑代码没有问题。但是当我再次上传代码，测试机用eclipse通过svn同步之后，代码是有的，但是打包的时候，就是看不到新的代码。当时幸好改动的地方不多，一点点的排查，最后查到class文件发现了不同。</p>
+<p>具体的原因未知，当时为了快点测试，直接就把测试机的java版本直接升到了小版本的14.之后编译一切正常。到现在也不知道为什么会这样，实际看了下源代码，调用的方法属于不建议用的方法，不知道是否跟这个有关，等后期有时间再装一个jdk。看能不能重现这个问题。今天先记录下来，如果下次再遇到这种本机好用，测试机原来好用，新编译文件怎么都不好用的时候，就要考虑下jdk小版本不同的可能性了。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;记录一个java版本的坑&quot;&gt;&lt;a href=&quot;#记录一个java版本的坑&quot; class=&quot;headerlink&quot; title=&quot;记录一个java版本的坑&quot;&gt;&lt;/a&gt;记录一个java版本的坑&lt;/h1&gt;&lt;p&gt;我一直以为java8小版本号之间是没有什么差异的，结果今天踩
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>同步hexo遇到的坑</title>
