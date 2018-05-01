@@ -3,20 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>java版本的一个坑 | Hexo</title>
+  <title>java版本的一个坑 | 杂想录</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="记录一个java版本的坑我一直以为java8小版本号之间是没有什么差异的，结果今天踩了一个巨大的坑才发现不是。这次的任务比较奇葩，java不能调试，只有实际的运行环境的文件。我们要改的文件最后会打成一个jar包，以jar包的形式被实际环境调用。所以我们只能是通过输出log的方式来实际查看代码运行效果。 在测试环节，我本地的java版本是[1.8.0-14].我修改完代码之后，连整个工程都上传了一次">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java版本的一个坑">
 <meta property="og:url" content="http://yoursite.com/2017/08/10/java版本的一个坑/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="杂想录">
 <meta property="og:description" content="记录一个java版本的坑我一直以为java8小版本号之间是没有什么差异的，结果今天踩了一个巨大的坑才发现不是。这次的任务比较奇葩，java不能调试，只有实际的运行环境的文件。我们要改的文件最后会打成一个jar包，以jar包的形式被实际环境调用。所以我们只能是通过输出log的方式来实际查看代码运行效果。 在测试环节，我本地的java版本是[1.8.0-14].我修改完代码之后，连整个工程都上传了一次">
+<meta property="og:locale" content="zh-cn">
 <meta property="og:updated_time" content="2017-08-10T13:03:21.529Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java版本的一个坑">
 <meta name="twitter:description" content="记录一个java版本的坑我一直以为java8小版本号之间是没有什么差异的，结果今天踩了一个巨大的坑才发现不是。这次的任务比较奇葩，java不能调试，只有实际的运行环境的文件。我们要改的文件最后会打成一个jar包，以jar包的形式被实际环境调用。所以我们只能是通过输出log的方式来实际查看代码运行效果。 在测试环节，我本地的java版本是[1.8.0-14].我修改完代码之后，连整个工程都上传了一次">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="杂想录" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -41,7 +42,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,8 +61,12 @@
     </div>
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
+        <a href="/" id="logo">杂想录</a>
       </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">吐槽是一门学问</a>
+        </h2>
       
     </div>
   </div>
@@ -98,7 +103,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/10/java版本的一个坑/" data-id="cjgn0fb3d000dtgqr6geqsxnc" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2017/08/10/java版本的一个坑/" data-id="cjgn0fb3d000dtgqr6geqsxnc" class="article-share-link">Share</a>
       
       
       
@@ -109,7 +114,7 @@
 <nav id="article-nav">
   
     <a href="/2017/08/17/SQL的行转列的变种应用/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
+      <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
           SQL的行转列的变种应用
@@ -119,7 +124,7 @@
   
   
     <a href="/2017/07/31/同步hexo遇到的坑/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">下一篇</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">同步hexo遇到的坑</div>
     </a>
   
@@ -141,7 +146,7 @@
     
       <div class="widget" id="toc-widget-fixed">
       
-        <strong class="toc-title">文章目录</strong>
+        <strong class="toc-title">Content</strong>
         <div class="toc-widget-list">
               <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#记录一个java版本的坑"><span class="toc-number">1.</span> <span class="toc-text">记录一个java版本的坑</span></a></li></ol>
           </div>
@@ -173,11 +178,11 @@
   
   <div class="outer">
     <div id="footer-left">
-      &copy; 2014 - 2018 John Doe&nbsp;|&nbsp;
-      主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
+      &copy; 2014 - 2018 Zhou Deqiang&nbsp;|&nbsp;
+      Theme by <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
     </div>
      <div id="footer-right">
-      联系方式&nbsp;|&nbsp;youemail@outlook.com
+      Contact&nbsp;|&nbsp;youemail@outlook.com
     </div>
   </div>
 </footer>
