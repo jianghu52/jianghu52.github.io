@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-01T01:42:23.307Z</updated>
+  <updated>2018-05-07T14:07:17.906Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Django学习-1</title>
+    <link href="http://yoursite.com/2018/05/07/Django%E5%AD%A6%E4%B9%A0-1/"/>
+    <id>http://yoursite.com/2018/05/07/Django学习-1/</id>
+    <published>2018-05-07T13:55:46.000Z</published>
+    <updated>2018-05-07T14:07:17.906Z</updated>
+    
+    <content type="html"><![CDATA[<p>折腾了一圈，又开始回来学习Django了。<br>之所以回来，首先是因为其他的小的框架都太过简略，配置其他的东西比较麻烦。再一个，现在老了。越来越懒了。能有集成的东西用。就尽量快点能达到目的。</p>
+<p>先说说遇到的坑吧。<br>第一个，关于python的虚拟机virtualenv 的坑。virtualenv 默认是copy pip的。但是现在pip的版本有个问题，10.0以上的版本，不支持main方法了。于是在pycharm加载的时候，就会提示报错。</p>
+<p>但是我手动的先把已经安装好的python3的pip降级成了9.0.1之后，再调用virtualenv 生成新的虚拟机的情况下，pip的版本依然是10.0以上。这就比较尴尬了。</p>
+<p>所以需要virtualenv 生成的虚拟机底下再把pip降级一遍。但是注意。如果你打成</p>
+<pre><code>pip install pip==9.0.1
+</code></pre><p>是会报错的。因为此时不知道你想降级成哪个。正确的方式是指定python路径，再指定pip版本</p>
+<pre><code>python.exe -m pip install --upgrade pip==9.0.1
+</code></pre><p>注意，我的这个命令是在虚拟机下面的Scripts文件夹下执行的，所以没写python.exe的路径。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;折腾了一圈，又开始回来学习Django了。&lt;br&gt;之所以回来，首先是因为其他的小的框架都太过简略，配置其他的东西比较麻烦。再一个，现在老了。越来越懒了。能有集成的东西用。就尽量快点能达到目的。&lt;/p&gt;
+&lt;p&gt;先说说遇到的坑吧。&lt;br&gt;第一个，关于python的虚拟机virt
+    
+    </summary>
+    
+    
+      <category term="Django Python" scheme="http://yoursite.com/tags/Django-Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>title:Django学习(1)</title>
+    <link href="http://yoursite.com/2018/05/07/title-Django%E5%AD%A6%E4%B9%A0-1/"/>
+    <id>http://yoursite.com/2018/05/07/title-Django学习-1/</id>
+    <published>2018-05-07T13:54:10.000Z</published>
+    <updated>2018-05-07T13:54:10.923Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>一秒钟的胜利</title>

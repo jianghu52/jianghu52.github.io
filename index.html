@@ -41,7 +41,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -72,6 +72,96 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-Django学习-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/07/Django学习-1/" class="article-date">
+  <time datetime="2018-05-07T13:55:46.000Z" itemprop="datePublished">2018-05-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/07/Django学习-1/">Django学习-1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p>折腾了一圈，又开始回来学习Django了。<br>之所以回来，首先是因为其他的小的框架都太过简略，配置其他的东西比较麻烦。再一个，现在老了。越来越懒了。能有集成的东西用。就尽量快点能达到目的。</p>
+<p>先说说遇到的坑吧。<br>第一个，关于python的虚拟机virtualenv 的坑。virtualenv 默认是copy pip的。但是现在pip的版本有个问题，10.0以上的版本，不支持main方法了。于是在pycharm加载的时候，就会提示报错。</p>
+<p>但是我手动的先把已经安装好的python3的pip降级成了9.0.1之后，再调用virtualenv 生成新的虚拟机的情况下，pip的版本依然是10.0以上。这就比较尴尬了。</p>
+<p>所以需要virtualenv 生成的虚拟机底下再把pip降级一遍。但是注意。如果你打成</p>
+<pre><code>pip install pip==9.0.1
+</code></pre><p>是会报错的。因为此时不知道你想降级成哪个。正确的方式是指定python路径，再指定pip版本</p>
+<pre><code>python.exe -m pip install --upgrade pip==9.0.1
+</code></pre><p>注意，我的这个命令是在虚拟机下面的Scripts文件夹下执行的，所以没写python.exe的路径。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/07/Django学习-1/" data-id="cjgwblxw000004sqrz2v4b1ut" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django-Python/">Django Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-title-Django学习-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/07/title-Django学习-1/" class="article-date">
+  <time datetime="2018-05-07T13:54:10.000Z" itemprop="datePublished">2018-05-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/07/title-Django学习-1/">title:Django学习(1)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/07/title-Django学习-1/" data-id="cjgwblxwg00034sqrbnnvmmh1" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
   
     <article id="post-一秒钟的胜利" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -109,7 +199,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/01/一秒钟的胜利/" data-id="cjgn0fb2i0002tgqr9idwk70o" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/01/一秒钟的胜利/" data-id="cjgwblxxb000e4sqrzijsb5e3" class="article-share-link">分享</a>
       
       
       
@@ -164,7 +254,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/02/神户钢铁的堕落与日本制造的悲哀/" data-id="cjgn0fb32000btgqr6v1fdz0g" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/02/神户钢铁的堕落与日本制造的悲哀/" data-id="cjgwblxxb000f4sqr2axk9i5b" class="article-share-link">分享</a>
       
       
       
@@ -333,7 +423,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/17/SQL的行转列的变种应用/" data-id="cjgn0fb230000tgqrixx8smfi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/17/SQL的行转列的变种应用/" data-id="cjgwblxwg00054sqro1ba3cq4" class="article-share-link">分享</a>
       
       
       
@@ -376,7 +466,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/10/java版本的一个坑/" data-id="cjgn0fb3d000dtgqr6geqsxnc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/10/java版本的一个坑/" data-id="cjgwblxwg00044sqrv5pmyt5y" class="article-share-link">分享</a>
       
       
       
@@ -473,7 +563,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/31/同步hexo遇到的坑/" data-id="cjgn0fb2y0007tgqr8a6cgzi0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/31/同步hexo遇到的坑/" data-id="cjgwblxwv00094sqr3gjiya2c" class="article-share-link">分享</a>
       
       
       
@@ -515,7 +605,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/29/胡汉三回来了/" data-id="cjgn0fb30000atgqryfrd0gpa" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/29/胡汉三回来了/" data-id="cjgwblxxb000d4sqriiljz4ul" class="article-share-link">分享</a>
       
       
       
@@ -564,7 +654,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/29/hello-world/" data-id="cjgn0fb2l0003tgqr2wbwy37i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/29/hello-world/" data-id="cjgwblxw000014sqrzmaty06v" class="article-share-link">分享</a>
       
       
       
@@ -646,108 +736,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/15/vs-code-好用插件/" data-id="cjgn0fb2b0001tgqrp6qmahou" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-xampp版本问题" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/12/xampp版本问题/" class="article-date">
-  <time datetime="2017-03-12T04:45:12.000Z" itemprop="datePublished">2017-03-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/12/xampp版本问题/">xampp版本问题</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- Table of Contents -->
-        
-        <h1 id="xampp的版本问题"><a href="#xampp的版本问题" class="headerlink" title="xampp的版本问题"></a>xampp的版本问题</h1><p>公司一直都在用含有mysql的xampp，结果前几天我去官网看的时候发现，竟然全部都改成MariaDB了。之后再找版本就不容易了。于是记录一下。方便以后查找</p>
-<p>支持xp。2003的版本是<a href="https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/1.8.2/" target="_blank" rel="external">1.8.2</a>以下。down的时候选择最新的就可以了。</p>
-<p>最后支持mysql的版本是<a href="https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/5.5.28/" target="_blank" rel="external">5.5.28</a>/<a href="https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/5.6.12/" target="_blank" rel="external">5.6.12</a>他们两个的版本号都是根据php的版本来的。具体来说就是对应的是php5.5 以及php5.6两个版本。所以用哪个看你的php版本支持了。<br>一下摘抄自xampp的blog</p>
-<blockquote>
-<p>v5.5.28 / v5.6.12</p>
-<ul>
-<li>Updated Apache to 2.4.16</li>
-<li>Updated PHP to 5.5.28 / 5.6.12</li>
-<li>Updated MySQL to 5.6.26</li>
-<li>Updated phpMyAdmin to 4.4.14</li>
-</ul>
-</blockquote>
-<p>最后附上xampp的所有<a href="https://sourceforge.net/projects/xampp/files/" target="_blank" rel="external">历史版本</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/12/xampp版本问题/" data-id="cjgn0fb2u0005tgqrw0pipfc8" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-华为之狼性-从清理40-研发人员说起" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/05/华为之狼性-从清理40-研发人员说起/" class="article-date">
-  <time datetime="2017-03-05T11:22:15.000Z" itemprop="datePublished">2017-03-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/05/华为之狼性-从清理40-研发人员说起/">华为之狼性--从清理40+研发人员说起</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- Table of Contents -->
-        
-        <h1 id="华为之狼性–从清理40-研发人员说起"><a href="#华为之狼性–从清理40-研发人员说起" class="headerlink" title="华为之狼性–从清理40+研发人员说起"></a>华为之狼性–从清理40+研发人员说起</h1><p>  其实知道这个消息已经很久了。前一阵子各种各样的人都开始讨论华为的这个政策。我当时有些看法，但是觉得那个时候还没有酝酿足够，于是拖到现在。</p>
-<p>  以前一直知道华为很牛逼，但是这一阵子大家都开始说华为怎么怎么牛逼的时候，我反倒很少说华为牛逼了。但是这次的事情，总让我觉得有不吐不快的地方。所以正好借着新开始折腾博客的机会，开始吐槽一下。</p>
-<p>  <em>我也不知道这个博客能活多久，更不知道我能坚持多久。但是我会尽可能的坚持下去。</em></p>
-<p>  华为的狼性现在已经不是什么新闻了，事实上到了现在，已经很少再有报道提到“狼性”这个词了。但是就如同老话讲的一样，只有起错的名字，没有起错的绰号。我们给任何企业加的标签，如果能被大众所接受。一定是因为大众真的觉得这个标签符合企业在大众心中的定位。</p>
-<p>  说起狼。有人知道狼团队协作能力强，有战斗力，但是不知道有多少人知道狼群的淘汰也是非常残忍的。当一个狼群里面的食物不在充足到使所有狼都吃饱的时候，老狼就开始被驱离狼群了。不管这个老狼之前在队伍中是什么样的角色，不管他是否还胜任这个职位，只因为他老了。于是他就要被驱离。老实说。华为干这件事儿早已经不是第一次了。07年的时候，8周年大裁员就有这么干过，只不过那时候华为还不够出名，人还不够多，所以大家没啥感觉而已。事实上到了今天，很多人还是没有什么感觉。</p>
-<p>  之所以到了今天，我依然对于华为裁员耿耿于怀，只是觉得，原来华为还没有我想的那么强大。前一阵子，任正非刚开始说，华为要开始接受失败，开始向无人区探索。这才过了几个月，就要开始裁研发人员了。一个真正好的企业，其实应该是盼着经济危机的。因为一到经济危机，他的对手就少了。而且可以吸收更多的人才，在核心竞争力方面更加的打好护城河。可是华为呢，也跟其他的人一样，开始裁员度日，当然，主动裁员可能给的补偿不错。但是问题是，他裁掉的不是边缘的人，而是核心的研发人员。他这么做，裁掉的不仅仅是成本，更是信心。如果在华为，奋斗是为了钱，不是理想，或者换个说法，大家在华为奋斗，就是为了在被裁之前达到财务自由，那么请问，华为如果有一天不能这么赚钱了，给不到大家这么高的薪水了，或者说到40岁之前没办法让你财务自由的时候，华为还能剩下什么呢？一旦华为开始露出这样的征兆的时候，30+的人会怎么选择，20+的人在招聘的时候会怎么打算？华为已经是我心目中非常优秀的互联网企业了。如果这么优秀的企业，都无法承载人的理想，那么这真是中国企业的一种悲哀。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/05/华为之狼性-从清理40-研发人员说起/" data-id="cjgn0fb2x0006tgqrpw7ytiii" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/03/15/vs-code-好用插件/" data-id="cjgwblxwv00084sqr1pf0dwgh" class="article-share-link">分享</a>
       
       
       
@@ -760,6 +749,10 @@
 
   
 
+
+  <nav id="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页&raquo;</a>
+  </nav>
 </section>
            
     <aside id="sidebar">
@@ -795,18 +788,26 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title tagcloud">Tag Cloud</h3>
+    <h3 class="widget-title tagcloud">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/技术/" style="font-size: 10px;">技术</a> <a href="/tags/随想/" style="font-size: 10px;">随想</a>
+      <a href="/tags/Django-Python/" style="font-size: 10px;">Django Python</a> <a href="/tags/技术/" style="font-size: 10px;">技术</a> <a href="/tags/随想/" style="font-size: 10px;">随想</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title recent-posts">Recent Posts</h3>
+    <h3 class="widget-title recent-posts">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/05/07/Django学习-1/">Django学习-1</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/07/title-Django学习-1/">title:Django学习(1)</a>
+          </li>
         
           <li>
             <a href="/2018/05/01/一秒钟的胜利/">一秒钟的胜利</a>
@@ -820,14 +821,6 @@
             <a href="/2017/08/17/SQL的行转列的变种应用/">SQL的行转列的变种应用</a>
           </li>
         
-          <li>
-            <a href="/2017/08/10/java版本的一个坑/">java版本的一个坑</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/31/同步hexo遇到的坑/">同步hexo遇到的坑</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -836,7 +829,7 @@
     
 
    <div class="widget-wrap">
-    <h3 class="widget-title lastest-comments">Latest Comments</h3>
+    <h3 class="widget-title lastest-comments">最新评论</h3>
     <div class="widget">
         <span>此widget基于多说，如需使用，请启用 duoshuo_shortname 属性</span>
     </div>
@@ -847,7 +840,7 @@
     
 
    <div class="widget-wrap">
-    <h3 class="widget-title hot-comment-posts">Hot Posts</h3>
+    <h3 class="widget-title hot-comment-posts">热评文章</h3>
     <div class="widget">
         <span>此widget基于多说，如需使用，请启用 duoshuo_shortname 属性</span>
     </div>
@@ -856,9 +849,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title archive">Archives</h3>
+    <h3 class="widget-title archive">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -872,10 +865,10 @@
   <div class="outer">
     <div id="footer-left">
       &copy; 2014 - 2018 Zhou Deqiang&nbsp;|&nbsp;
-      Theme by <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
+      主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
     </div>
      <div id="footer-right">
-      Contact&nbsp;|&nbsp;youemail@outlook.com
+      联系方式&nbsp;|&nbsp;youemail@outlook.com
     </div>
   </div>
 </footer>
