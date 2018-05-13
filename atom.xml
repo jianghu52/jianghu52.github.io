@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-07T14:07:17.906Z</updated>
+  <updated>2018-05-13T12:06:04.104Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,101 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>windows的神兵利器</title>
+    <link href="http://yoursite.com/2018/05/13/windows%E7%9A%84%E7%A5%9E%E5%85%B5%E5%88%A9%E5%99%A8/"/>
+    <id>http://yoursite.com/2018/05/13/windows的神兵利器/</id>
+    <published>2018-05-13T11:10:36.000Z</published>
+    <updated>2018-05-13T12:06:04.104Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文是转载自 <a href="https://www.liutf.com/posts/3720794851.html" target="_blank" rel="external">Tick_tick</a></p>
+<blockquote>
+<p>文章作者： liutf<br><br>联系邮箱： lautayfir@163.com<br><br>版权声明： 本博客所有文章除特别声明外，均采用 CC BY-NC-SA 3.0 许可协议。转载请注明出处！</p>
+</blockquote>
+<p>之所以又写一遍，是因为我知道很多的博客总是这样，没多少时间就变成了死链。所以我宁可自己发一次。然后再声明是转载。自从进了大公司，发现他们真的对于版权很在意，于是我自己也注意一点吧。</p>
+<p>总结一下。<br>windows相关工具</p>
+<blockquote>
+<p>快速启动：WOX<br>快速启动应用+文件搜索+各种实用插件（计算器、翻译、网页快速访问等）。我的最爱，没有它我几乎半残。</p>
+<p>一开始从用altrun 然后试过Listary ，发现WOX 后，最为顺手，效率提升100%。</p>
+<p>搜索工具：everything<br>秒找电脑里的各种文件。与WOX完美集成。</p>
+<p>下载：IDM<br>多线程下载HTTP类文件下载利器，杠杠的。Chrome 内的下载都托管给了IDM，可下载百度云离线文件，突破下载速度限制。</p>
+<p>做不到的BT 下载，使用迅雷下载或者Aria2 来配合处理即可。</p>
+<p>截图：snipaste<br>开源、免费的国产截图神器。给我最大的感受是截图更方便，且比QQ截图工具清晰很多。</p>
+<p>预览工具：QuickLook<br>按下空格即可快速预览文件，微软商店内的免费应用。</p>
+<p>之前用的seer，发现QuickLook 后，果断抛弃。</p>
+<p>剪切板工具：Ditto<br>再也不用担心刚才复制的内容找不到了。</p>
+<p>结构化笔记：workflowy<br>Make lists,not war.我常用于记录工作中的各种待办事项。</p>
+<p>Markdown写作工具：Typora<br>最好用的Markdown写作工具，所见即所得。(这个我本人不是很同意。我现在用vscode也是所见即所得。)</p>
+<p>贴图工具：PicGo<br>支持多种图床，功能强大。</p>
+<p>看图工具：2345看图王<br>虽然名字土鳖，国产软件，一贯的有流氓行为。但是看图是真好用，我能忍。233333.(我是忍不了的。所以我一定不会用，话说我还是没明白看图有什么必要。)</p>
+<p>压缩软件：BandZIP</p>
+<p>播放器：Splash</p>
+<p>录屏工具：LICEcap<br>比GifCam更好用。</p>
+</blockquote>
+<h1 id="Chrome插件"><a href="#Chrome插件" class="headerlink" title="Chrome插件"></a>Chrome插件</h1><blockquote>
+<p>Surfingkeys</p>
+<p>在Chrome上，可以摆脱掉烦人的鼠标了。Vimium 升级版，我的最爱。(全键盘操作了不起啊。不过浏览网页确实了不起。。。)</p>
+<p>Tampermonkey<br><br>一千个司机眼中有一千个油猴。<br><br>强大的脚本让你可以做很多很爽的事情。比如开车、百度网盘破解直接下载、VIP视频在线解析破解去广告等。</p>
+<p>沙拉查词-网页划词翻译<br><br>全能网页划词翻译，开放源码、功能丰富、超多词典、清爽快速、支持个性化设置<br>详细信息删除。<br><br>找了很久才找到的划词翻译软件，而且双击Ctrl还可以弹出查询翻译页面。用起来很爽。</p>
+<p>掘金<br><br>新标签页托管给掘金，快速获得专业内容。掘金已成为一种习惯。(没用习惯。而且还不支持firfox。哼mm)</p>
+<p>Imagus<br><br>鼠标悬浮停留在图片上，自动弹出放大图片，不用再在新链接中打开看大图了。</p>
+<p>oneTab<br><br>标签页打开太多的时候，占用内存而且怕关掉后回头找不到？oneTab完美解决这个问题。<br><br> 主要是用来缩减窗口，保存浏览记录。<br><br>为了省内存？Chrome越来越吃内存？加内存条才是根本的解决办法。</p>
+<p>AutoPagerize<br><br>专门需要Google、百度，点击下一页很烦。AutoPagerize让我不再需要点下一页。</p>
+<p>谷歌访问助手<br><br>如果你只要访问个谷歌或者上谷歌商店的话，不需要突破围墙的话，装这个插件可以满足基本使用了。免费而且速度还行。</p>
+<p>Proxy SwitchyOmega<br><br>HTTP、SOCKS5代理插件，轻松快捷地管理和切换多个代理设置。用过段时间，挺好用的。</p>
+<p>LastPass<br><br>省掉很多记密码的烦恼。</p>
+<p>Insight.io for Github<br><br>IDE like code intelligence and code search for GitHub by Insight.io.<br><br>Github内看代码更方便，带高亮、跳转。</p>
+<p>GitZip for github<br><br>It can make the sub-directories and files of github repository as zip and download it.<br><br>不想Clone整个项目，只想下载单个文件或者单个文件夹时，用这个。</p>
+<p>Clear Cache<br><br>一键清除缓存，可以少点很多步。</p>
+<p>User-Agent Switcher for Chrome<br><br>Chrome可以转换为别的浏览器进行访问，如IE、Safari、360甚至iOS、 Android等移动浏览器，方便用户进行测试。</p>
+<p>2.1. IDE：IntelliJ IDEA<br><br>2.2. IDEA插件私家珍藏<br></p>
+<ul>
+<li>JRebel for IntelliJ<br></li>
+<li>热部署插件，Java WEB 开发必备，节省生命。</li>
+<li>Custom Postfix Templates<br>我的最爱。可以自定义Postfix模板(就是自定义自己的快捷短语，生成代码)</li>
+<li>Lombok Plugin<br>使用注解自动生成代码，码奴解放者。</li>
+<li>RestfulToolkit<br>Java WEB开发必备，再也不用全局搜索RequestMapping了(这个没用过不懂)</li>
+<li>Translation<br>翻译插件，很好用。（还有这么神奇的东西呢，第一次知道）</li>
+<li>Grep Console<br>高亮log不同级别日志，看日志的时候一目了然。</li>
+<li>String Manipulation<br>字符串格式风格快捷转换：大小写、驼峰、连接串等。（这个好，很有用）</li>
+<li>Rainbow Brackets<br>彩虹括号。自动给代码块内花括号和括号加色，让视野更加注意在代码上。</li>
+</ul>
+</blockquote>
+<p>2.3. 文本编辑器：Sublime<br></p>
+<blockquote>
+<p>我个人其实更加喜欢vscode。纯文本的话我用emeditor，我买了终身版，但是在公司的电脑上竟然不能用，郁闷。最后妥协的结果是用notepad++</p>
+</blockquote>
+<p>2.4. 数据库客户端：DataGrip<br></p>
+<blockquote>
+<p>这个软件我个人保留意见，没怎么用过，而且好像还是收费的。</p>
+</blockquote>
+<p>2.5. SSH客户端：MobaXterm<br><br>2.6. 终端工具：Cmder<br><br>2.7. API工具：Postman<br></p>
+<blockquote>
+<p>这个东西没用过，不懂</p>
+</blockquote>
+<p>2.8. API管理平台<br></p>
+<blockquote>
+<p>这个东西没用过，不懂</p>
+</blockquote>
+<p>2.9. 对比工具 Beyond Compare </p>
+<blockquote>
+<p>我也买了4.0版本，太好用了。</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文是转载自 &lt;a href=&quot;https://www.liutf.com/posts/3720794851.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Tick_tick&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文章作者： liutf
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="http://yoursite.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
   
   <entry>
     <title>Django学习-1</title>
