@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-26T15:07:14.820Z</updated>
+  <updated>2018-06-02T14:07:05.956Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Django学习-2</title>
+    <link href="http://yoursite.com/2018/06/02/Django%E5%AD%A6%E4%B9%A0-2/"/>
+    <id>http://yoursite.com/2018/06/02/Django学习-2/</id>
+    <published>2018-06-02T13:23:53.000Z</published>
+    <updated>2018-06-02T14:07:05.956Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="关于pycharm社区版"><a href="#关于pycharm社区版" class="headerlink" title="关于pycharm社区版"></a>关于pycharm社区版</h1><p>pycharm 当时买了一个正版，可是只能用一年。现在已经3年过去了，实在是太贵，不想买了，就开始用社区版了。结果发现社区版在使用django上有一些坑。</p>
+<p>社区版本身是不支持django的，所以需要我们自己手动配置。（以下是pycharm已经配置完enve之后的情况）<br>1.下载django（现在已经默认是2.0了，这跟很多教程又有区别了。）<br>2.通过命令开始生成django工程</p>
+<pre><code>django-admin startproject 你的工程名
+</code></pre><p>注意，这个地方的工程名跟你实际的项目名还是有差别的，一个工程下面可以跑N个项目，所以这个名字一般不会有强制要求，你怎么起都行。</p>
+<p>3.生成django项目</p>
+<pre><code>python manage.py startapp 你的项目名
+</code></pre><p>这个项目名最好起的规范一点，因为这个项目名有时候回暴露在url下。你起的太随意比较low</p>
+<p>4.manage自检</p>
+<pre><code>python manage.py migrate
+</code></pre><p>这个命令执行之后如果都是ok的话。就可以了。<br>PS：还有两个不是坑的坑。1.自己生成的文件夹里面是不包含的templates文件夹的。我到现在才知道原来这个文件夹是pycharm自己生成的。2.默认的django是链接sqllite3的。所以如果要连接mysql的话，需要手动配置。</p>
+<p>5.debug配置<br>pycharm需要手动配置debug环境。也很简单<br>run-editconfiguration<br>打开之后，点击左上角的绿色+号。新建一个。选择python<br>之后名字随意起。<br>主要是两个部分</p>
+<ol>
+<li>script path：一直选择到manage.py的位置。</li>
+<li>Parameters：runserver</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;关于pycharm社区版&quot;&gt;&lt;a href=&quot;#关于pycharm社区版&quot; class=&quot;headerlink&quot; title=&quot;关于pycharm社区版&quot;&gt;&lt;/a&gt;关于pycharm社区版&lt;/h1&gt;&lt;p&gt;pycharm 当时买了一个正版，可是只能用一年。现在已经3
+    
+    </summary>
+    
+    
+      <category term="Django" scheme="http://yoursite.com/tags/Django/"/>
+    
+  </entry>
   
   <entry>
     <title>5个经济学常识</title>

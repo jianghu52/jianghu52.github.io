@@ -73,6 +73,63 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Django学习-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/02/Django学习-2/" class="article-date">
+  <time datetime="2018-06-02T13:23:53.000Z" itemprop="datePublished">2018-06-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/02/Django学习-2/">Django学习-2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <h1 id="关于pycharm社区版"><a href="#关于pycharm社区版" class="headerlink" title="关于pycharm社区版"></a>关于pycharm社区版</h1><p>pycharm 当时买了一个正版，可是只能用一年。现在已经3年过去了，实在是太贵，不想买了，就开始用社区版了。结果发现社区版在使用django上有一些坑。</p>
+<p>社区版本身是不支持django的，所以需要我们自己手动配置。（以下是pycharm已经配置完enve之后的情况）<br>1.下载django（现在已经默认是2.0了，这跟很多教程又有区别了。）<br>2.通过命令开始生成django工程</p>
+<pre><code>django-admin startproject 你的工程名
+</code></pre><p>注意，这个地方的工程名跟你实际的项目名还是有差别的，一个工程下面可以跑N个项目，所以这个名字一般不会有强制要求，你怎么起都行。</p>
+<p>3.生成django项目</p>
+<pre><code>python manage.py startapp 你的项目名
+</code></pre><p>这个项目名最好起的规范一点，因为这个项目名有时候回暴露在url下。你起的太随意比较low</p>
+<p>4.manage自检</p>
+<pre><code>python manage.py migrate
+</code></pre><p>这个命令执行之后如果都是ok的话。就可以了。<br>PS：还有两个不是坑的坑。1.自己生成的文件夹里面是不包含的templates文件夹的。我到现在才知道原来这个文件夹是pycharm自己生成的。2.默认的django是链接sqllite3的。所以如果要连接mysql的话，需要手动配置。</p>
+<p>5.debug配置<br>pycharm需要手动配置debug环境。也很简单<br>run-editconfiguration<br>打开之后，点击左上角的绿色+号。新建一个。选择python<br>之后名字随意起。<br>主要是两个部分</p>
+<ol>
+<li>script path：一直选择到manage.py的位置。</li>
+<li>Parameters：runserver</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/02/Django学习-2/" data-id="cjhxh1s9g0000loqrgotievga" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/">Django</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-5个经济学常识" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/05/26/5个经济学常识/" class="article-date">
@@ -222,7 +279,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/26/5个经济学常识/" data-id="cjhnj4jcu0000dcqrushn8tnc" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/05/26/5个经济学常识/" data-id="cjhxh1s9m0001loqri979zyhj" class="article-share-link">分享</a>
       
       
       
@@ -337,7 +394,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/13/windows的神兵利器/" data-id="cjhnj4jdn000ddcqrrmsjelas" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/05/13/windows的神兵利器/" data-id="cjhxh1sah000gloqr7eonj8rp" class="article-share-link">分享</a>
       
       
       
@@ -387,7 +444,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/07/Django学习-1/" data-id="cjhnj4jdc0004dcqrv8frzlqw" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/05/07/Django学习-1/" data-id="cjhxh1sa70009loqrj6eyb0oe" class="article-share-link">分享</a>
       
       
       
@@ -429,7 +486,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/07/title-Django学习-1/" data-id="cjhnj4jdg0005dcqrvia30irn" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/05/07/title-Django学习-1/" data-id="cjhxh1s9v0003loqrfymktour" class="article-share-link">分享</a>
       
       
       
@@ -477,7 +534,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/01/一秒钟的胜利/" data-id="cjhnj4jdp000edcqr16qqxs8u" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/05/01/一秒钟的胜利/" data-id="cjhxh1sa9000aloqrbhhjykr8" class="article-share-link">分享</a>
       
       
       
@@ -532,7 +589,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/02/神户钢铁的堕落与日本制造的悲哀/" data-id="cjhnj4jdv000idcqryiu7sn7r" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2017/11/02/神户钢铁的堕落与日本制造的悲哀/" data-id="cjhxh1saj000jloqrk8wzq8cd" class="article-share-link">分享</a>
       
       
       
@@ -701,7 +758,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/17/SQL的行转列的变种应用/" data-id="cjhnj4jd90003dcqrhsz49uk9" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2017/08/17/SQL的行转列的变种应用/" data-id="cjhxh1sa30005loqrg69y51lh" class="article-share-link">分享</a>
       
       
       
@@ -744,7 +801,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/10/java版本的一个坑/" data-id="cjhnj4jd10001dcqrjmidzbna" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2017/08/10/java版本的一个坑/" data-id="cjhxh1sa50008loqrxvsyks05" class="article-share-link">分享</a>
       
       
       
@@ -841,49 +898,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/31/同步hexo遇到的坑/" data-id="cjhnj4je5000ldcqrnp48d2kp" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-胡汉三回来了" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/29/胡汉三回来了/" class="article-date">
-  <time datetime="2017-07-29T13:53:18.000Z" itemprop="datePublished">2017-07-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/29/胡汉三回来了/">胡汉三回来了</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- Table of Contents -->
-        
-        <h1 id="胡汉三回来了。"><a href="#胡汉三回来了。" class="headerlink" title="胡汉三回来了。"></a>胡汉三回来了。</h1><p> 胡汉三回来了。因为他新买了一台电脑，旧电脑莫名的起不来了。结果很多东西需要一点点的整，好不容易才轮到了博客。<br> 从这个角度来说，貌似博客真的不是什么重要的事情。</p>
-<p>但是换个角度来说，对于一个连朋友圈都很少打开的人来说，能在换了电脑半个月之后就来整博客，也算是一种重视吧。毕竟像什么<br>虚拟机配置啥的，到现在才进行了一般，数据库也才导入了一小部分。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/29/胡汉三回来了/" data-id="cjhnj4je7000mdcqrcp58ywy0" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2017/07/31/同步hexo遇到的坑/" data-id="cjhxh1sb0000nloqrplz50vr5" class="article-share-link">分享</a>
       
       
       
@@ -937,7 +952,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title tagcloud">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Django-Python/" style="font-size: 10px;">Django Python</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/技术/" style="font-size: 10px;">技术</a> <a href="/tags/随想/" style="font-size: 20px;">随想</a>
+      <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Django-Python/" style="font-size: 10px;">Django Python</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/技术/" style="font-size: 10px;">技术</a> <a href="/tags/随想/" style="font-size: 20px;">随想</a>
     </div>
   </div>
 
@@ -947,6 +962,10 @@
     <h3 class="widget-title recent-posts">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/06/02/Django学习-2/">Django学习-2</a>
+          </li>
         
           <li>
             <a href="/2018/05/26/5个经济学常识/">5个经济学常识</a>
@@ -962,10 +981,6 @@
         
           <li>
             <a href="/2018/05/07/title-Django学习-1/">title:Django学习(1)</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/01/一秒钟的胜利/">一秒钟的胜利</a>
           </li>
         
       </ul>
@@ -998,7 +1013,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title archive">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
