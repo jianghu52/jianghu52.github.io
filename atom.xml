@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-24T04:37:22.271Z</updated>
+  <updated>2019-03-24T06:52:29.014Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>VB6的一些坑</title>
+    <link href="http://yoursite.com/2019/03/24/VB6%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/"/>
+    <id>http://yoursite.com/2019/03/24/VB6的一些坑/</id>
+    <published>2019-03-24T06:17:27.000Z</published>
+    <updated>2019-03-24T06:52:29.014Z</updated>
+    
+    <content type="html"><![CDATA[<p>目前正在做VB6转NET，遇到了一些坑。记录一下，免得忘记了。</p>
+<ol>
+<li>VB6的数组是可以不从0开始的</li>
+</ol>
+<p>VB6：</p>
+<pre><code>dim arr1 As long(2 to 5)
+</code></pre><p>这个arr1的长度就只有4.但是。NET就不能直接这么设定，只能设定0到5，但是长度就会不一致。另外，2维的数组也可以不从0开始。</p>
+<p>2.字符串也有固定长度</p>
+<pre><code>dim str1 As string(5)
+</code></pre><p>str1虽然是string型，但是有具体长度，如果塞超过5位的内容，只保留5位，如果不足5位，还会自动填充到5位。换成。net的时候，可以用string，但是最后要format一下。如果用string arry的话，需要考虑赋值的元素的变化，用char arry也有这个问题。</p>
+<p>3.参数无固定值</p>
+<pre><code>public sub fun1（para1 as string，para2）
+</code></pre><p>para2可以是任何值，vb6用ismissing（para2）来判定para2有没有赋值，但是在。net里面，参数是必须有值的。所以这种情况下，。net必须将para2设置成object 并赋值成nothing，才能保证接下来的逻辑正常。</p>
+<p>4.tab顺无视容器。</p>
+<p>在vb6中，两个button在不同的panel中，如果tab顺为0,1的话，那么他们的tab顺就是0,1。<br>但是在。net中，这两个button在不同的panel中，那么需要考虑两个panel的tab数。</p>
+<p>5.lenB，midB的实现</p>
+<p>VB6中有lenB，midB方法，在截取字符串，尤其是日文汉字的时候，每个汉字都只占一位，而不是按照byte数占两位，。net中没有类似的方法，需要自己实现。</p>
+<p>6.年月日的格式化</p>
+<p>VB中的年月日有一种格式化参数的“gggg-cc-cc”，还有一种是“g@@@@-@@-@@”。都表示和历，但是随着日本年号的增加，这种参数已经不再适用。所以要自定义方法。</p>
+<p>7.array之间的赋值是传值的</p>
+<p>vb6：</p>
+<pre><code><figure class="highlight vb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">Private</span> <span class="keyword">Structure</span> stru</div><div class="line">    <span class="keyword">public</span> familyName <span class="keyword">as</span> <span class="built_in">string</span></div><div class="line">    <span class="keyword">public</span> address <span class="keyword">as</span> <span class="built_in">string</span></div><div class="line"><span class="keyword">end</span> <span class="keyword">Structure</span></div><div class="line"></div><div class="line"><span class="keyword">dim</span> arry1 <span class="keyword">as</span> stru(<span class="number">5</span>)</div><div class="line"><span class="keyword">dim</span> arry2 <span class="keyword">as</span> stru(<span class="number">5</span>)</div><div class="line"></div><div class="line">arry1(<span class="number">0</span>).familyName = <span class="string">"my home"</span></div><div class="line">arry1(<span class="number">0</span>).address = <span class="string">"moon"</span></div><div class="line"></div><div class="line">arry2 = arry1</div><div class="line">arry2(<span class="number">0</span>).address = <span class="string">"earth"</span> </div><div class="line">print arry1(<span class="number">0</span>).address</div></pre></td></tr></table></figure>
+</code></pre><p>结果是 moon。也但是如果换成是。net，结果就是earth了。所以如果两个arry之间赋值的时候，最好用clone的方式。（clone需要自己实现）</p>
+<p>暂时就这些。等想到了再说。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;目前正在做VB6转NET，遇到了一些坑。记录一下，免得忘记了。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;VB6的数组是可以不从0开始的&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;VB6：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;dim arr1 As long(2 to 5)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这
+    
+    </summary>
+    
+    
+      <category term="代码" scheme="http://yoursite.com/tags/%E4%BB%A3%E7%A0%81/"/>
+    
+  </entry>
   
   <entry>
     <title>如果波音飞机事件是另外一种结局</title>

@@ -73,6 +73,72 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-VB6的一些坑" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/24/VB6的一些坑/" class="article-date">
+  <time datetime="2019-03-24T06:17:27.000Z" itemprop="datePublished">2019-03-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/24/VB6的一些坑/">VB6的一些坑</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p>目前正在做VB6转NET，遇到了一些坑。记录一下，免得忘记了。</p>
+<ol>
+<li>VB6的数组是可以不从0开始的</li>
+</ol>
+<p>VB6：</p>
+<pre><code>dim arr1 As long(2 to 5)
+</code></pre><p>这个arr1的长度就只有4.但是。NET就不能直接这么设定，只能设定0到5，但是长度就会不一致。另外，2维的数组也可以不从0开始。</p>
+<p>2.字符串也有固定长度</p>
+<pre><code>dim str1 As string(5)
+</code></pre><p>str1虽然是string型，但是有具体长度，如果塞超过5位的内容，只保留5位，如果不足5位，还会自动填充到5位。换成。net的时候，可以用string，但是最后要format一下。如果用string arry的话，需要考虑赋值的元素的变化，用char arry也有这个问题。</p>
+<p>3.参数无固定值</p>
+<pre><code>public sub fun1（para1 as string，para2）
+</code></pre><p>para2可以是任何值，vb6用ismissing（para2）来判定para2有没有赋值，但是在。net里面，参数是必须有值的。所以这种情况下，。net必须将para2设置成object 并赋值成nothing，才能保证接下来的逻辑正常。</p>
+<p>4.tab顺无视容器。</p>
+<p>在vb6中，两个button在不同的panel中，如果tab顺为0,1的话，那么他们的tab顺就是0,1。<br>但是在。net中，这两个button在不同的panel中，那么需要考虑两个panel的tab数。</p>
+<p>5.lenB，midB的实现</p>
+<p>VB6中有lenB，midB方法，在截取字符串，尤其是日文汉字的时候，每个汉字都只占一位，而不是按照byte数占两位，。net中没有类似的方法，需要自己实现。</p>
+<p>6.年月日的格式化</p>
+<p>VB中的年月日有一种格式化参数的“gggg-cc-cc”，还有一种是“g@@@@-@@-@@”。都表示和历，但是随着日本年号的增加，这种参数已经不再适用。所以要自定义方法。</p>
+<p>7.array之间的赋值是传值的</p>
+<p>vb6：</p>
+<pre><code><figure class="highlight vb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">Private</span> <span class="keyword">Structure</span> stru</div><div class="line">    <span class="keyword">public</span> familyName <span class="keyword">as</span> <span class="built_in">string</span></div><div class="line">    <span class="keyword">public</span> address <span class="keyword">as</span> <span class="built_in">string</span></div><div class="line"><span class="keyword">end</span> <span class="keyword">Structure</span></div><div class="line"></div><div class="line"><span class="keyword">dim</span> arry1 <span class="keyword">as</span> stru(<span class="number">5</span>)</div><div class="line"><span class="keyword">dim</span> arry2 <span class="keyword">as</span> stru(<span class="number">5</span>)</div><div class="line"></div><div class="line">arry1(<span class="number">0</span>).familyName = <span class="string">"my home"</span></div><div class="line">arry1(<span class="number">0</span>).address = <span class="string">"moon"</span></div><div class="line"></div><div class="line">arry2 = arry1</div><div class="line">arry2(<span class="number">0</span>).address = <span class="string">"earth"</span> </div><div class="line">print arry1(<span class="number">0</span>).address</div></pre></td></tr></table></figure>
+</code></pre><p>结果是 moon。也但是如果换成是。net，结果就是earth了。所以如果两个arry之间赋值的时候，最好用clone的方式。（clone需要自己实现）</p>
+<p>暂时就这些。等想到了再说。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/24/VB6的一些坑/" data-id="cjtmkf3l5000594qru448alih" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/代码/">代码</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-如果波音飞机事件是另外一种结局" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/24/如果波音飞机事件是另外一种结局/" class="article-date">
@@ -111,7 +177,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/24/如果波音飞机事件是另外一种结局/" data-id="cjtmfmlq3000jdgqr04zqq3s9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/24/如果波音飞机事件是另外一种结局/" data-id="cjtmkf3lk000l94qrtpg05pm1" class="article-share-link">Share</a>
       
       
       
@@ -168,7 +234,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/02/Django学习-2/" data-id="cjtmfmlp90001dgqr5n9h0yvc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/02/Django学习-2/" data-id="cjtmkf3l9000994qr95vlxw9a" class="article-share-link">Share</a>
       
       
       
@@ -331,7 +397,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/26/5个经济学常识/" data-id="cjtmfmlpe0002dgqrilufcib9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/26/5个经济学常识/" data-id="cjtmkf3ki000094qrb7z7155h" class="article-share-link">Share</a>
       
       
       
@@ -446,7 +512,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/13/windows的神兵利器/" data-id="cjtmfmlpt0009dgqr8fsty2pr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/13/windows的神兵利器/" data-id="cjtmkf3lc000d94qr7vrr22rd" class="article-share-link">Share</a>
       
       
       
@@ -496,7 +562,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/07/Django学习-1/" data-id="cjtmfmlpq0005dgqrxcup9gg9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/07/Django学习-1/" data-id="cjtmkf3l0000494qrr9gdjemo" class="article-share-link">Share</a>
       
       
       
@@ -538,7 +604,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/07/title-Django学习-1/" data-id="cjtmfmlpr0006dgqrem3cs7zg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/07/title-Django学习-1/" data-id="cjtmkf3kx000394qr2tkakfxu" class="article-share-link">Share</a>
       
       
       
@@ -586,7 +652,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/01/一秒钟的胜利/" data-id="cjtmfmlpx000cdgqr3fwzogo4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/01/一秒钟的胜利/" data-id="cjtmkf3le000e94qr1rjcvio1" class="article-share-link">Share</a>
       
       
       
@@ -641,7 +707,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/02/神户钢铁的堕落与日本制造的悲哀/" data-id="cjtmfmlqk000rdgqrtygt295m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/02/神户钢铁的堕落与日本制造的悲哀/" data-id="cjtmkf3lo000q94qrmqi2jcx7" class="article-share-link">Share</a>
       
       
       
@@ -810,50 +876,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/17/SQL的行转列的变种应用/" data-id="cjtmfmlpn0004dgqr0bbxhz35" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-java版本的一个坑" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/08/10/java版本的一个坑/" class="article-date">
-  <time datetime="2017-08-10T12:41:07.000Z" itemprop="datePublished">2017-08-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/10/java版本的一个坑/">java版本的一个坑</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- Table of Contents -->
-        
-        <h1 id="记录一个java版本的坑"><a href="#记录一个java版本的坑" class="headerlink" title="记录一个java版本的坑"></a>记录一个java版本的坑</h1><p>我一直以为java8小版本号之间是没有什么差异的，结果今天踩了一个巨大的坑才发现不是。<br>这次的任务比较奇葩，java不能调试，只有实际的运行环境的文件。我们要改的文件最后会打成一个jar包，以jar包的形式被实际环境调用。所以我们只能是通过输出log的方式来实际查看代码运行效果。</p>
-<p>在测试环节，我本地的java版本是[1.8.0-14].我修改完代码之后，连整个工程都上传了一次。测试机装的java版本是1.8.0_10。在这个时候测试机跑代码没有问题。但是当我再次上传代码，测试机用eclipse通过svn同步之后，代码是有的，但是打包的时候，就是看不到新的代码。当时幸好改动的地方不多，一点点的排查，最后查到class文件发现了不同。</p>
-<p>具体的原因未知，当时为了快点测试，直接就把测试机的java版本直接升到了小版本的14.之后编译一切正常。到现在也不知道为什么会这样，实际看了下源代码，调用的方法属于不建议用的方法，不知道是否跟这个有关，等后期有时间再装一个jdk。看能不能重现这个问题。今天先记录下来，如果下次再遇到这种本机好用，测试机原来好用，新编译文件怎么都不好用的时候，就要考虑下jdk小版本不同的可能性了。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/10/java版本的一个坑/" data-id="cjtmfmlq8000ndgqrxxn3l4il" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/17/SQL的行转列的变种应用/" data-id="cjtmkf3kn000194qrenxd9e8i" class="article-share-link">Share</a>
       
       
       
@@ -907,7 +930,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title tagcloud">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Django-Python/" style="font-size: 10px;">Django Python</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/技术/" style="font-size: 10px;">技术</a> <a href="/tags/随想/" style="font-size: 20px;">随想</a>
+      <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Django-Python/" style="font-size: 10px;">Django Python</a> <a href="/tags/代码/" style="font-size: 10px;">代码</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/技术/" style="font-size: 10px;">技术</a> <a href="/tags/随想/" style="font-size: 20px;">随想</a>
     </div>
   </div>
 
@@ -917,6 +940,10 @@
     <h3 class="widget-title recent-posts">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/03/24/VB6的一些坑/">VB6的一些坑</a>
+          </li>
         
           <li>
             <a href="/2019/03/24/如果波音飞机事件是另外一种结局/">如果波音飞机事件是另外一种结局</a>
@@ -932,10 +959,6 @@
         
           <li>
             <a href="/2018/05/13/windows的神兵利器/">windows的神兵利器</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/07/Django学习-1/">Django学习-1</a>
           </li>
         
       </ul>
@@ -968,7 +991,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title archive">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
