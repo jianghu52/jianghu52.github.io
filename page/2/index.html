@@ -41,7 +41,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -73,6 +73,103 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-同步hexo遇到的坑" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/31/同步hexo遇到的坑/" class="article-date">
+  <time datetime="2017-07-31T13:58:42.000Z" itemprop="datePublished">2017-07-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/31/同步hexo遇到的坑/">同步hexo遇到的坑</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p>虽然现在看起来，同步的步骤很简单，但是之前碰壁了N次，遇到了好几个坑。记下来，以便以后能跳过去。</p>
+<h1 id="1-npm换源"><a href="#1-npm换源" class="headerlink" title="1. npm换源"></a>1. npm换源</h1><p>前一台电脑的宽带是联通的，npm虽然慢，好歹还能用。这次的环境宽带是移动的，虽然号称100M。但是用起来完全没有联通的50M的流畅，时不时就断流，要不是我这个小区只有这一个选择，打死我都不用移动的宽带。因为npm没速度，所以准备换淘宝的源。<br>随便从网上找了一个命令</p>
+<blockquote>
+<p>$ npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a></p>
+</blockquote>
+<p>当时也没看，觉得挺对，就用上了。结果一直连不上，我还以为是淘宝的源也不对。后来仔细一看，原来是用cnpm替代了npm。所以如果用上面这条命令，如果在遇到教程，就应该直接自动把npm替换成cnpm。</p>
+<p>或者直接替换npm的源。</p>
+<blockquote>
+<p>npm config set registry <a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a></p>
+</blockquote>
+<p>用这个命令之后，后面可以直接使用npm命令。</p>
+<h1 id="2-lf-will-be-replaced-by-crlf"><a href="#2-lf-will-be-replaced-by-crlf" class="headerlink" title="2. lf will be replaced by crlf"></a>2. lf will be replaced by crlf</h1><p>编译文章的时候，报以上的错误。这个错误在我初始的电脑上安装的时候没有报错，当时那台电脑也是win7.至于为什么没报错，我也不知情。但是这个错误其实是跟git有关。而且只出现咋windows系统上。修改方式也简单。</p>
+<blockquote>
+<p>$ rm -rf .git<br>$ git config –global core.autocrlf false</p>
+</blockquote>
+<p>注意，一定要先删除.git文件之后，再配置git config。不然不好使。</p>
+<h1 id="3-hexo-deploy-not-found-git"><a href="#3-hexo-deploy-not-found-git" class="headerlink" title="3.hexo deploy not found git"></a>3.hexo deploy not found git</h1><p>我个人是执行了</p>
+<blockquote>
+<p>npm install hexo-deployer-git –save</p>
+</blockquote>
+<p>就ok了，但是看网上的意思，这个跟没有配置git的环境也有关系。但是因为我配置了，所以这一步坑不是很大。顺手写上git的配置</p>
+<blockquote>
+<p>$ git config –global user.name “runoob”</p>
+<p>$ git config –global user.email test@runoob.com</p>
+</blockquote>
+<p>生成ssh</p>
+<blockquote>
+<p>ssh-keygen -t rsa -C “test@runoob.com”</p>
+</blockquote>
+<p>默认保存路径</p>
+<blockquote>
+<p>C:\Users\Administrator.ssh</p>
+</blockquote>
+<h1 id="4-could-not-read-Username-for-‘https-github-com‘"><a href="#4-could-not-read-Username-for-‘https-github-com‘" class="headerlink" title="4.could not read Username for ‘https://github.com‘"></a>4.could not read Username for ‘<a href="https://github.com" target="_blank" rel="external">https://github.com</a>‘</h1><p>这是我最奇怪的一个错误<br>我原来的配置信息</p>
+<pre><code>deploy:   
+    type: git   
+    repo: https://github.com/jianghu52/jianghu52.github.io
+    branch: master
+</code></pre><p>我以为这个是对的，但是在我现在的机器上就是不好使。<br>改成这样</p>
+<pre><code>deploy:
+    type: git
+    repository: https://jianghu52@github.com/jianghu52/jianghu52.github.io
+    branch: master
+</code></pre><p>竟然就对了。我很疑惑到底是什么导致这个差异，可惜到现在也没调查出来。</p>
+<p>以上就是遇到的坑。<br>总结一下大概的流程。</p>
+<ol>
+<li>git，node.js 是必须的。</li>
+<li>copy原来的scaffolds，source，themes，.gitignore，_config.yml，package.json六个文件，前三个是文件夹，后三个是单文件</li>
+<li><p>在copy后的文件夹里面执行hexo安装程序</p>
+<blockquote>
+<p>npm install hexo-cli -g</p>
+</blockquote>
+<p> 注意，最好是换源之后再执行，不然过不去的可能性很大。</p>
+</li>
+<li><p>hexo server测试过后，直接hexo g，再hexo d。如果一切顺利，那么你应该可以在github上看到你新的blog了。</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/31/同步hexo遇到的坑/" data-id="cjtmfmlq5000ldgqr7ezvsvjw" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-胡汉三回来了" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/07/29/胡汉三回来了/" class="article-date">
@@ -103,7 +200,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/29/胡汉三回来了/" data-id="cjjpq7u5s000fpwqrtyx6g9s6" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2017/07/29/胡汉三回来了/" data-id="cjtmfmlq9000pdgqr02ql912e" class="article-share-link">Share</a>
       
       
       
@@ -152,7 +249,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/29/hello-world/" data-id="cjjpq7u4p0001pwqrqxya3cb8" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2017/07/29/hello-world/" data-id="cjtmfmlp30000dgqrzgm4w1ez" class="article-share-link">Share</a>
       
       
       
@@ -234,7 +331,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/15/vs-code-好用插件/" data-id="cjjpq7u60000kpwqr01yo7br2" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2017/03/15/vs-code-好用插件/" data-id="cjtmfmlpz000edgqra97s54dk" class="article-share-link">Share</a>
       
       
       
@@ -287,7 +384,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/12/xampp版本问题/" data-id="cjjpq7u520004pwqr5r0v1fhi" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2017/03/12/xampp版本问题/" data-id="cjtmfmlpw000adgqrrx89s53d" class="article-share-link">Share</a>
       
       
       
@@ -335,7 +432,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/05/华为之狼性-从清理40-研发人员说起/" data-id="cjjpq7u5p000cpwqr0gb9m16q" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2017/03/05/华为之狼性-从清理40-研发人员说起/" data-id="cjtmfmlq2000hdgqru92i26ow" class="article-share-link">Share</a>
       
       
       
@@ -350,7 +447,7 @@
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
   </nav>
 </section>
            
@@ -368,9 +465,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title recent-posts">最新文章</h3>
+    <h3 class="widget-title recent-posts">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/03/24/如果波音飞机事件是另外一种结局/">如果波音飞机事件是另外一种结局</a>
+          </li>
         
           <li>
             <a href="/2018/06/02/Django学习-2/">Django学习-2</a>
@@ -386,10 +487,6 @@
         
           <li>
             <a href="/2018/05/07/Django学习-1/">Django学习-1</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/07/title-Django学习-1/">title:Django学习(1)</a>
           </li>
         
       </ul>
@@ -414,11 +511,11 @@
   
   <div class="outer">
     <div id="footer-left">
-      &copy; 2014 - 2018 Zhou Deqiang&nbsp;|&nbsp;
-      主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
+      &copy; 2014 - 2019 Zhou Deqiang&nbsp;|&nbsp;
+      Theme by <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
     </div>
      <div id="footer-right">
-      联系方式&nbsp;|&nbsp;youemail@outlook.com
+      Contact&nbsp;|&nbsp;youemail@outlook.com
     </div>
   </div>
 </footer>
