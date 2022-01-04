@@ -73,6 +73,175 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-SQL的行转列的变种应用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/17/SQL的行转列的变种应用/" class="article-date">
+  <time datetime="2017-08-17T12:36:48.000Z" itemprop="datePublished">2017-08-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/17/SQL的行转列的变种应用/">SQL的行转列的变种应用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <h1 id="行转列的变种应用"><a href="#行转列的变种应用" class="headerlink" title="行转列的变种应用"></a>行转列的变种应用</h1><p>今天项目中遇到一个问题。本来想用行转列的方式实现。但是后来发现不行。只好手动的来行转列。记录下来，免得忘记了。</p>
+<h2 id="数据表"><a href="#数据表" class="headerlink" title="数据表"></a>数据表</h2><table>
+<thead>
+<tr>
+<th>No</th>
+<th>列1</th>
+<th>列2</th>
+<th>列3</th>
+<th>列4</th>
+<th>列5</th>
+<th>列6</th>
+<th>列7</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>A</td>
+<td>B</td>
+</tr>
+<tr>
+<td>2</td>
+<td>A</td>
+<td>C</td>
+<td>D</td>
+</tr>
+<tr>
+<td>3</td>
+<td>B</td>
+<td>E</td>
+<td>D</td>
+<td>F</td>
+</tr>
+</tbody>
+</table>
+<h2 id="定义表"><a href="#定义表" class="headerlink" title="定义表"></a>定义表</h2><table>
+<thead>
+<tr>
+<th>No</th>
+<th>定义1 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>A</td>
+</tr>
+<tr>
+<td>2</td>
+<td>B</td>
+</tr>
+<tr>
+<td>3</td>
+<td>C</td>
+</tr>
+<tr>
+<td>4</td>
+<td>D</td>
+</tr>
+<tr>
+<td>5</td>
+<td>E</td>
+</tr>
+<tr>
+<td>6</td>
+<td>F</td>
+</tr>
+<tr>
+<td>7</td>
+<td>G</td>
+</tr>
+</tbody>
+</table>
+<p>最后填充之后，希望得到的是</p>
+<h2 id="修改之后的数据表"><a href="#修改之后的数据表" class="headerlink" title="修改之后的数据表"></a>修改之后的数据表</h2><table>
+<thead>
+<tr>
+<th>No</th>
+<th>列1</th>
+<th>列2</th>
+<th>列3</th>
+<th>列4</th>
+<th>列5</th>
+<th>列6</th>
+<th>列7</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td>D</td>
+<td>E</td>
+<td>F</td>
+<td>G</td>
+</tr>
+<tr>
+<td>2</td>
+<td>A</td>
+<td>C</td>
+<td>D</td>
+<td>B</td>
+<td>E</td>
+<td>F</td>
+<td>G</td>
+</tr>
+<tr>
+<td>3</td>
+<td>B</td>
+<td>E</td>
+<td>D</td>
+<td>F</td>
+<td>A</td>
+<td>C</td>
+<td>G</td>
+</tr>
+</tbody>
+</table>
+<p>当时想了半天，一直想用语句实现。后来发现非常的困难。到最后，只能用循环嵌套的方式解决</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">declare</span> @strSql <span class="built_in">varchar</span>(<span class="number">100</span>)</div><div class="line"><span class="keyword">declare</span> @sameFlg <span class="built_in">int</span></div><div class="line"><span class="keyword">declare</span> @colIndex <span class="built_in">int</span></div><div class="line"><span class="keyword">declare</span> @firstFlg <span class="built_in">int</span></div><div class="line"></div><div class="line"><span class="keyword">set</span> @firstFlg = <span class="number">0</span></div><div class="line"><span class="keyword">declare</span> cur1 <span class="keyword">cursor</span> <span class="keyword">for</span></div><div class="line">    <span class="keyword">select</span> * <span class="keyword">from</span> 数据表</div><div class="line"><span class="keyword">open</span> cur1</div><div class="line"><span class="keyword">fetch</span> <span class="keyword">next</span> <span class="keyword">from</span> cur1 <span class="keyword">into</span> @<span class="keyword">No</span>,@列<span class="number">1</span>，@列<span class="number">2</span>，@列<span class="number">3</span>，@列<span class="number">4</span>，@列<span class="number">5</span>，@列<span class="number">6</span>，@列<span class="number">7</span></div><div class="line"><span class="keyword">while</span> @@fetch_status =<span class="number">0</span></div><div class="line"><span class="keyword">begin</span></div><div class="line">    <span class="keyword">if</span> @列<span class="number">1</span> <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span></div><div class="line">    <span class="keyword">begin</span></div><div class="line">        <span class="keyword">set</span> @colIndex = <span class="number">1</span></div><div class="line">    <span class="keyword">end</span></div><div class="line"></div><div class="line">    <span class="keyword">if</span> @列<span class="number">2</span> <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span></div><div class="line">    <span class="keyword">begin</span></div><div class="line">        <span class="keyword">set</span> @colIndex = <span class="number">2</span></div><div class="line">    <span class="keyword">end</span></div><div class="line">    <span class="comment">--有多少列，就判断 多少次。</span></div><div class="line">    <span class="comment">--全部判断完成之后，strSql里面应该是 列里面有值的内容就拼完成的状态。</span></div><div class="line">    </div><div class="line">    <span class="comment">--循环定义表</span></div><div class="line">    <span class="keyword">declare</span> cur2 <span class="keyword">cursor</span> <span class="keyword">for</span></div><div class="line">        <span class="keyword">select</span> 定义<span class="number">1</span> <span class="keyword">from</span> 定义表</div><div class="line">    <span class="keyword">open</span> cur2</div><div class="line">    <span class="keyword">fetch</span> cur2 <span class="keyword">into</span> @定义<span class="number">1</span> </div><div class="line">    <span class="keyword">while</span> @@fetch_status =<span class="number">0</span></div><div class="line">    <span class="keyword">begin</span></div><div class="line">        <span class="keyword">set</span> @sameFlg = <span class="number">0</span></div><div class="line">        <span class="keyword">if</span> @定义<span class="number">1</span> = @列<span class="number">1</span> <span class="keyword">or</span> @定义<span class="number">1</span> = @列<span class="number">2</span> <span class="comment">--判断定义的内容是否已经在数据列中存在</span></div><div class="line">        <span class="keyword">begin</span></div><div class="line">            <span class="keyword">set</span> @sameFlg = <span class="number">1</span></div><div class="line">        <span class="keyword">end</span></div><div class="line"></div><div class="line">        <span class="keyword">if</span> @sameFlg &lt; <span class="number">1</span> <span class="comment">--不存的情况下，就继续拼strSql</span></div><div class="line">        <span class="keyword">begin</span></div><div class="line">            <span class="comment">--第一次的情况下</span></div><div class="line">            <span class="keyword">if</span> @firstFlg = <span class="number">0</span></div><div class="line">            <span class="keyword">begin</span></div><div class="line">                <span class="keyword">set</span> @strSql = <span class="string">'set 列'</span>+ @colIndex + <span class="string">'= '''</span> + @定义<span class="number">1</span></div><div class="line">                <span class="keyword">set</span> @firstFlg = <span class="number">1</span></div><div class="line">            <span class="keyword">end</span></div><div class="line">            <span class="keyword">else</span></div><div class="line">            <span class="keyword">begin</span></div><div class="line">                <span class="keyword">set</span> @strSql = <span class="string">'，列'</span>+ @colIndex + <span class="string">'= '''</span> + @定义<span class="number">1</span></div><div class="line">            <span class="keyword">end</span></div><div class="line">            <span class="keyword">set</span> @colIndex = @colIndex + <span class="number">1</span></div><div class="line">            </div><div class="line">        <span class="keyword">end</span></div><div class="line">    <span class="keyword">fetch</span> <span class="keyword">next</span> <span class="keyword">from</span> cur2 <span class="keyword">into</span> @定义<span class="number">1</span></div><div class="line">    <span class="keyword">end</span></div><div class="line">    <span class="keyword">close</span> cur2</div><div class="line">    <span class="keyword">deallocate</span>  cur2        </div><div class="line"></div><div class="line">    <span class="comment">--sql拼接完成，开始更新该条数据</span></div><div class="line">    <span class="keyword">set</span> @finallSql = <span class="string">'update 数据表'</span> + @strSql + <span class="string">'where No = '</span> + @<span class="keyword">No</span></div><div class="line">    EXEC(@finallSql)</div><div class="line"></div><div class="line"><span class="keyword">fetch</span> <span class="keyword">next</span> <span class="keyword">from</span> cur1 <span class="keyword">into</span> @<span class="keyword">No</span>,@列<span class="number">1</span>，@列<span class="number">2</span>，@列<span class="number">3</span>，@列<span class="number">4</span>，@列<span class="number">5</span>，@列<span class="number">6</span>，@列<span class="number">7</span></div><div class="line"><span class="keyword">end</span></div><div class="line"><span class="keyword">close</span> cur1</div><div class="line"><span class="keyword">deallocate</span>  cur1</div></pre></td></tr></table></figure>
+<p>以上就是我凭记忆打出来的代码，可能无法运行，但是思路就是这么个思路。<br>行转列的循环嵌套的实现方式，总结起来，有以下几个固定的套路。</p>
+<ol>
+<li>第一层循环一定是包含【行转列】里面的【列】的循环。这个循环里面，列是固定的数字，所以可以写出固定的变量如 A1，A2，A3,A4这样的</li>
+<li>第二层循环一定是包含【行转列】里面的行的循环。这个循环里面，因为行数不是固定的，所以定义的变量通常是要转换的值。通常只有一个。如TempValue</li>
+<li>在第二层循环里面判定条件，在一定条件下，将TempValue 赋值给A1，A2，A3.一个第二层循环结束，意味着一条完整的列的数据已经被填充完毕。</li>
+</ol>
+<p>循环嵌套本身不是用来干行转列的，但是在复杂的行转列的需求下，比如三行三列的定义数据，要转换成九列的情况下，个人感觉没什么SQL文可以实现。不如自己写存储过程来的直观。当然，这是因为的SQL水平只在增删改查的水平，实在无法理解太过深奥的SQL。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/08/17/SQL的行转列的变种应用/" data-id="ckxzy8rym0003lkqrdrhbxwso" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-java版本的一个坑" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/08/10/java版本的一个坑/" class="article-date">
@@ -104,7 +273,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/10/java版本的一个坑/" data-id="ck48fsn0d0002q0qrbhuktkll" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2017/08/10/java版本的一个坑/" data-id="ckxzy8ryo0004lkqr0zrk93vh" class="article-share-link">分享</a>
       
       
       
@@ -201,7 +370,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/31/同步hexo遇到的坑/" data-id="ck48fsn16000eq0qrbvgnxddg" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2017/07/31/同步hexo遇到的坑/" data-id="ckxzy8rz5000jlkqra44f89tz" class="article-share-link">分享</a>
       
       
       
@@ -243,7 +412,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/29/胡汉三回来了/" data-id="ck48fsn1l000rq0qro1q1px36" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2017/07/29/胡汉三回来了/" data-id="ckxzy8rze000olkqrkvesx5l9" class="article-share-link">分享</a>
       
       
       
@@ -258,7 +427,7 @@
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/07/29/hello-world/" class="article-date">
-  <time datetime="2017-07-29T07:57:23.730Z" itemprop="datePublished">2017-07-29</time>
+  <time datetime="2017-07-29T07:57:23.731Z" itemprop="datePublished">2017-07-29</time>
 </a>
     
   </div>
@@ -292,7 +461,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/29/hello-world/" data-id="ck48fsn060001q0qr1pxgi219" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2017/07/29/hello-world/" data-id="ckxzy8rzh000tlkqrk80hfqom" class="article-share-link">分享</a>
       
       
       
@@ -374,7 +543,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/15/vs-code-好用插件/" data-id="ck48fsn17000gq0qrj2bgb4qi" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2017/03/15/vs-code-好用插件/" data-id="ckxzy8ryu0009lkqrwnsb1pqr" class="article-share-link">分享</a>
       
       
       
@@ -427,7 +596,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/12/xampp版本问题/" data-id="ck48fsn14000cq0qrbpj8z5ce" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2017/03/12/xampp版本问题/" data-id="ckxzy8rzg000rlkqrjtp495ge" class="article-share-link">分享</a>
       
       
       
@@ -475,7 +644,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/05/华为之狼性-从清理40-研发人员说起/" data-id="ck48fsn0y0007q0qr82cim69s" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2017/03/05/华为之狼性-从清理40-研发人员说起/" data-id="ckxzy8rz0000flkqrdjyw7lj3" class="article-share-link">分享</a>
       
       
       
@@ -513,6 +682,10 @@
       <ul>
         
           <li>
+            <a href="/2022/01/04/中美日对于媒体潮流的不同应对/">中美日对于媒体潮流的不同应对</a>
+          </li>
+        
+          <li>
             <a href="/2019/03/24/VB6的一些坑/">VB6的一些坑</a>
           </li>
         
@@ -526,10 +699,6 @@
         
           <li>
             <a href="/2018/05/26/5个经济学常识/">5个经济学常识</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/13/windows的神兵利器/">windows的神兵利器</a>
           </li>
         
       </ul>
@@ -554,7 +723,7 @@
   
   <div class="outer">
     <div id="footer-left">
-      &copy; 2014 - 2019 Zhou Deqiang&nbsp;|&nbsp;
+      &copy; 2014 - 2022 Zhou Deqiang&nbsp;|&nbsp;
       主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
     </div>
      <div id="footer-right">
